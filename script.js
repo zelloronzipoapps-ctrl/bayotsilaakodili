@@ -149,5 +149,5 @@ document.getElementById('startBtn').addEventListener('click', () => {
     document.getElementById('startBtn').style.display = 'none';
     document.getElementById('stopBtn').style.display = 'inline-block';
 });
-document.getElementById('stopBtn').addEventListener('click', () => location.reload());).addEventListener('click', () => camera.start());
+document.getElementById('stopBtn').addEventListener('click', () => location.reload());addEventListener('click', () => camera.start());
 document.getElementById('stopBtn').addEventListener('click', () => location.reload());
