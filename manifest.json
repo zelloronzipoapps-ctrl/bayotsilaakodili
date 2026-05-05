@@ -1,6 +1,6 @@
 {
-  "name": "Pulse Tracker Pro",
-  "short_name": "Pulse",
+  "name": "Pulse Sight",
+  "short_name": "PS",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f0f2f5",
