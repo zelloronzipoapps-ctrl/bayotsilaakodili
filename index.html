@@ -77,4 +77,26 @@
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
     <script src="script.js"></script>
 </body>
+    <!-- Load OpenCV first with a fallback -->
+<script src="https://docs.opencv.org/4.5.x/opencv.js" type="text/javascript"></script>
+
+<script>
+    // Force-enable the button if OpenCV takes too long or fails
+    window.onload = function() {
+        console.log("Page loaded, checking OpenCV...");
+        setTimeout(() => {
+            const startBtn = document.getElementById('startBtn');
+            const status = document.getElementById('status');
+            if (startBtn.disabled) {
+                status.innerText = "⚠️ OpenCV loading slow - Enabling Start anyway";
+                startBtn.disabled = false;
+            }
+        }, 5000); // Wait 5 seconds, then force-enable
+    };
+
+    function onOpenCvReady() {
+        document.getElementById('status').innerText = "✅ Pulsight Ready";
+        document.getElementById('startBtn').disabled = false;
+    }
+</script>
 </html>
