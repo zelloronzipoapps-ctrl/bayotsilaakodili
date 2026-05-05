@@ -1,36 +1,46 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; color: #1c1e21; overflow-x: hidden; }
+body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; color: #1c1e21; }
 
-/* Hamburger Menu */
+/* Menu */
 .side-nav {
     height: 100%; width: 0; position: fixed; z-index: 1000; top: 0; left: 0;
     background-color: #111; overflow-x: hidden; transition: 0.5s; padding-top: 60px;
 }
 .side-nav a { padding: 15px 32px; text-decoration: none; font-size: 20px; color: #818181; display: block; }
-.side-nav a:hover { color: #f1f1f1; }
-#hamburger { font-size: 30px; cursor: pointer; position: absolute; top: 15px; left: 15px; z-index: 1001; }
+#hamburger { font-size: 30px; cursor: pointer; position: fixed; top: 15px; left: 15px; z-index: 1001; color: #333; }
 
-/* Layout */
-.container { max-width: 600px; margin: 40px auto; padding: 20px; text-align: center; }
-.video-container { position: relative; border-radius: 20px; overflow: hidden; background: #000; height: 350px; margin-bottom: 20px; }
+/* Container */
+.container { max-width: 500px; margin: 0 auto; padding: 20px; text-align: center; }
+.brand-name { margin-top: 10px; font-weight: 800; color: #ff4b2b; }
+.logo-header { padding: 20px; }
+.main-logo { width: 80px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
+/* Video */
+.video-container { position: relative; border-radius: 20px; overflow: hidden; background: #000; height: 300px; margin: 15px 0; border: 4px solid #fff; }
 #video, #output { width: 100%; height: 100%; object-fit: cover; }
 
-/* Pulse Card */
+/* Pulse Display */
 .pulse-display {
     background: linear-gradient(135deg, #ff4b2b, #ff416c);
-    color: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    color: white; padding: 25px; border-radius: 25px; box-shadow: 0 10px 25px rgba(255, 75, 43, 0.3);
 }
-.pulse-value { font-size: 80px; font-weight: 800; }
-.timestamp { font-family: monospace; opacity: 0.8; margin-bottom: 5px; }
+.pulse-value { font-size: 70px; font-weight: 800; line-height: 1; }
+.timestamp { font-size: 14px; opacity: 0.8; margin-bottom: 10px; font-family: monospace; }
 
-/* Overlay Sections */
-.overlay-section { display: none; padding: 50px 20px; text-align: left; background: white; min-height: 100vh; }
-.back-btn { background: #eee; padding: 10px; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 20px; }
+/* Stats */
+.stats { display: flex; gap: 10px; margin: 20px 0; }
+.stat-box { background: white; padding: 12px; border-radius: 15px; flex: 1; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.stat-label { display: block; font-size: 11px; text-transform: uppercase; color: #777; }
+.stat-value { font-weight: bold; font-size: 14px; }
 
-/* Stats & Controls */
-.stats { display: flex; justify-content: space-around; margin: 20px 0; }
-.stat-box { background: white; padding: 10px; border-radius: 10px; flex: 1; margin: 0 5px; border: 1px solid #ddd; }
-.controls button { padding: 15px 25px; border-radius: 10px; border: none; font-weight: bold; margin: 5px; cursor: pointer; }
-#startBtn { background: #28a745; color: white; }
-#stopBtn { background: #dc3545; color: white; }
+/* Buttons */
+.controls button { padding: 15px 25px; border-radius: 12px; border: none; font-weight: bold; margin: 5px; cursor: pointer; }
+#startBtn { background: #28a745; color: white; width: 80%; }
+#stopBtn { background: #dc3545; color: white; display: none; }
+.install-btn { background: #007bff; color: white; margin: 20px 32px; padding: 12px; border-radius: 8px; font-size: 14px; }
+
+/* Overlays */
+.overlay-section { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 2000; padding: 40px 25px; overflow-y: auto; }
+#historyList { list-style: none; margin-top: 20px; }
+#historyList li { padding: 15px; border-bottom: 1px solid #eee; font-size: 14px; }
 .install-btn { background: #007bff; color: white; border: none; margin: 20px; padding: 10px; border-radius: 5px; }
