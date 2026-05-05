@@ -1,3 +1,16 @@
+// TOP OF script.js
+window.toggleMenu = function() {
+    const nav = document.getElementById("sideNav");
+    if (!nav) return;
+    nav.style.width = (nav.style.width === "250px") ? "0" : "250px";
+    console.log("Menu toggled to: " + nav.style.width);
+};
+
+window.showSection = function(section) {
+    // ... existing showSection code ...
+    toggleMenu(); // Closes menu after selection
+};
+
 const video = document.getElementById('video');
 const canvasElement = document.getElementById('output');
 const canvasCtx = canvasElement.getContext('2d');
