@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse Tracker Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <!-- Hamburger Menu -->
+    <div id="hamburger" onclick="toggleMenu()">☰</div>
+    <nav id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        <a href="#" onclick="showSection('main')">🏠 Home</a>
+        <a href="#" onclick="showSection('history')">📜 History</a>
+        <a href="#" onclick="showSection('how-it-works')">❓ How It Works</a>
+        <a href="#" onclick="showSection('about')">ℹ️ About Us</a>
+        <button id="downloadAppBtn" class="install-btn">📲 Install App</button>
+    </nav>
+
+    <div class="container" id="mainApp">
+        <header class="logo-header">
+            <img src="ps.jpg" alt="Logo" class="main-logo">
+        </header>
+
+        <div id="status" class="status-bar">Waiting for OpenCV...</div>
+
+        <div class="video-container">
+            <video id="video" autoplay playsinline></video>
+            <canvas id="output"></canvas>
+        </div>
+
+        <div class="pulse-display">
+            <div id="realTimeClock" class="timestamp">--:--:--</div>
+            <div class="pulse-value" id="pulseValue">--</div>
+            <div class="pulse-unit">BPM</div>
+            <div id="skinToneLabel" class="skin-label">Detecting Skin Tone...</div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <span class="stat-label">Signal</span>
+                <span id="signalQuality" class="stat-value">--</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Movement</span>
+                <span id="motionStatus" class="stat-value">Stable</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn" disabled>▶ Start</button>
+            <button id="stopBtn">⏹ Stop</button>
+            <button id="resetBtn">🔄 Reset</button>
+        </div>
+    </div>
+
+    <!-- Hidden Sections -->
+    <div id="historySection" class="overlay-section">
+        <button class="back-btn" onclick="showSection('main')">← Back</button>
+        <h2>Measurement History</h2>
+        <ul id="historyList"></ul>
+        <button onclick="clearHistory()" class="clear-btn">Clear History</button>
+    </div>
+
+    <div id="infoSection" class="overlay-section">
+        <button class="back-btn" onclick="showSection('main')">← Back</button>
+        <h2 id="infoTitle"></h2>
+        <p id="infoContent"></p>
+    </div>
+
+    <!-- Scripts -->
+    <script async src="opencv.js" onload="onOpenCvReady();"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

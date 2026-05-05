@@ -1,0 +1,36 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; color: #1c1e21; overflow-x: hidden; }
+
+/* Hamburger Menu */
+.side-nav {
+    height: 100%; width: 0; position: fixed; z-index: 1000; top: 0; left: 0;
+    background-color: #111; overflow-x: hidden; transition: 0.5s; padding-top: 60px;
+}
+.side-nav a { padding: 15px 32px; text-decoration: none; font-size: 20px; color: #818181; display: block; }
+.side-nav a:hover { color: #f1f1f1; }
+#hamburger { font-size: 30px; cursor: pointer; position: absolute; top: 15px; left: 15px; z-index: 1001; }
+
+/* Layout */
+.container { max-width: 600px; margin: 40px auto; padding: 20px; text-align: center; }
+.video-container { position: relative; border-radius: 20px; overflow: hidden; background: #000; height: 350px; margin-bottom: 20px; }
+#video, #output { width: 100%; height: 100%; object-fit: cover; }
+
+/* Pulse Card */
+.pulse-display {
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    color: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.pulse-value { font-size: 80px; font-weight: 800; }
+.timestamp { font-family: monospace; opacity: 0.8; margin-bottom: 5px; }
+
+/* Overlay Sections */
+.overlay-section { display: none; padding: 50px 20px; text-align: left; background: white; min-height: 100vh; }
+.back-btn { background: #eee; padding: 10px; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 20px; }
+
+/* Stats & Controls */
+.stats { display: flex; justify-content: space-around; margin: 20px 0; }
+.stat-box { background: white; padding: 10px; border-radius: 10px; flex: 1; margin: 0 5px; border: 1px solid #ddd; }
+.controls button { padding: 15px 25px; border-radius: 10px; border: none; font-weight: bold; margin: 5px; cursor: pointer; }
+#startBtn { background: #28a745; color: white; }
+#stopBtn { background: #dc3545; color: white; }
+.install-btn { background: #007bff; color: white; border: none; margin: 20px; padding: 10px; border-radius: 5px; }
